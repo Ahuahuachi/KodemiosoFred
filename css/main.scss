@@ -1,12 +1,22 @@
 $btn-control-color:#E6DB4B;
 $background-color: #8E9CFF;
-$square-size: 25vw;
+$square-size: 10vw;
+
+@font-face {
+    font-family: ouda-bold;
+    src: url(/fonts/Oduda-Bold-Demo.otf);
+}
 
 
 * {
-    background: $background-color;
-    font-family: Arial, Helvetica, sans-serif;
+    // background: $background-color;
+    font-family: ouda-bold, arial, Helvetica, sans-serif;
     margin: 10px 0px;
+}
+
+body{
+    background: url(/img/background.png);
+    background-size: cover;
 }
 
 .main-container {
@@ -108,7 +118,7 @@ $square-size: 25vw;
             background-color: $btn-control-color;
         }
 
-        #play{
+        #play {
             text-align: center;
             padding: 10px;
         }
