@@ -1,5 +1,119 @@
 * {
-  background: #eaeaea;
+  background: #8E9CFF;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.main-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .header {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.main-container .header .title {
+  background-color: #8e9cff;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.main-container .header .scoreboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main-container .header .scoreboard .scoreboard-item {
+  background-color: #fff;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.main-container .button-board {
+  background-color: #fff;
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  grid: 'button-1 button-2 button-3' 'button-4 button-5 button-6' 'button-7 button-8 button-9';
+}
+
+.main-container .button-board .game-button {
+  text-align: center;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 100%;
+  margin: auto;
+}
+
+.main-container .button-board #button-1 {
+  grid-area: button-1;
+  background-color: #1BBC9C;
+}
+
+.main-container .button-board #button-2 {
+  grid-area: button-2;
+  background-color: #2DCC70;
+}
+
+.main-container .button-board #button-3 {
+  grid-area: button-3;
+  background-color: #3598DB;
+}
+
+.main-container .button-board #button-4 {
+  grid-area: button-4;
+  background-color: #8D45AB;
+}
+
+.main-container .button-board #button-5 {
+  grid-area: button-5;
+  background-color: #F1C40F;
+}
+
+.main-container .button-board #button-6 {
+  grid-area: button-6;
+  background-color: #E74D3D;
+}
+
+.main-container .button-board #button-7 {
+  grid-area: button-7;
+  background-color: #1B5FBC;
+}
+
+.main-container .button-board #button-8 {
+  grid-area: button-8;
+  background-color: #19C1FF;
+}
+
+.main-container .button-board #button-9 {
+  grid-area: button-9;
+  background-color: #BC1B72;
+}
+
+.main-container .footer {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.main-container .footer .btn-action {
+  background-color: #E6DB4B;
 }
 /*# sourceMappingURL=main.css.map */
