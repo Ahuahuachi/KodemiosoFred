@@ -1,48 +1,52 @@
+var secuenciaPC = [];
+var secuenciaUsuario = [];
+var buttons = []
 
 
-function turnoPC(){
-  a=1;
-  b=9;
-  var Aleatorio= Math.round(Math.random()*(b-a)+parseInt(a));
-  var secuencia=[];
-  secuencia.append([Aleatorio]);
-  secencia.foreach(function(elements){
-     document.getElementById("button-"+elements).style.opacity=.75;
-  })
 
+function turnoPC() {
+    let a = 1,
+        b = 9;
 
+    var Aleatorio = Math.round(Math.random() * (b - a) + parseInt(a));
+    secuenciaPC.push(Aleatorio);
+    secuenciaPC.forEach((value, index, array) => {
+        document.getElementById(`button-${value}`).style.opacity = .5;
+        document.getElementById(`button-${value}`).style.opacity = 1;
+    });
+    startClock();
 };
 
+for (let index = 0; index < document.getElementsByClassName('game-button').length; index++) {
+    buttons.push(document.getElementsByClassName('game-button')[index]);
+}
 
-function FuncionAleatorio(a,b) {
-  console.log(Aleatorio);
-  switch (Aleatorio) {
-    case 1:
-    document.getElementById("Divuno").style.opacity = 1;
-    break;
-    case 2:
-    document.getElementById("Divdos").style.opacity = 1;
-    break;
-    case 3:
-    document.getElementById("Divtres").style.opacity = 1;
-    case 4:
-    break;
-    document.getElementById("Divcuatro").style.opacity = 1;
-    break;
-    case 5:
-    document.getElementById("Divcinco").style.opacity = 1;
-    break;
-    case 6:
-    document.getElementById("Divseis").style.opacity = 1;
-    break;
-    case 7:
-    document.getElementById("Divsiete").style.opacity = 1;
-    break;
-    case 8:
-    document.getElementById("Divocho").style.opacity = 1;
-    break;
-    case 9:
-    document.getElementById("Divnueve").style.opacity = 1;
-    break;
-  }
+
+buttons.forEach((element) => {
+    element.addEventListener('click', (e) => {
+        let continuePlaying;
+        secuenciaUsuario.push(e.target.getAttribute('data-button-number'));
+
+        secuenciaUsuario.forEach((value, index) => {
+            if (value == secuenciaPC[index]) {
+                // reseteo de contador
+                continuePlaying = true;
+            } else {
+                // Game over
+                continuePlaying = false
+            }
+        });
+
+        secuenciaPC = [];
+
+        if (continuePlaying) {
+            // Rutina para continuar
+            startClock();
+        }
+
+    });
+});
+
+function startClock(){
+    interval = setInterval(console.log('Start'), 3000);
 }
